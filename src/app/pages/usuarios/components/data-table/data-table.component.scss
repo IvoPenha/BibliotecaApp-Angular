@@ -1,0 +1,28 @@
+.table {
+  width: 100%;
+  thead th {
+    padding: 1rem inherit;
+    text-align: center;
+  }
+  td {
+    text-align: center;
+  }
+}
+
+.title {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #585b5e;
+}
+
+.box {
+  padding: 0.4rem 1rem;
+  background-color: #fffafa;
+}
+
+.justify-content-center {
+  .spinner-border {
+    height: 10rem;
+    width: 10rem;
+  }
+  height: 14rem;
+}

@@ -1,0 +1,58 @@
+<app-page-header
+  description="Pagina de livros"
+  title="Livros"
+  [showButton]="true"
+  textButton="Novo"
+  (buttonEvent)="openModal()"
+>
+</app-page-header>
+<div class="filter-container">
+  <h3 class="mb-3">Filtros</h3>
+  <form [formGroup]="filter" class="filters">
+    <div>
+      <input
+        class="input-form form-control"
+        formControlName="searchTitulo"
+        placeholder="Titulo"
+        type="text"
+      />
+      <div
+        *ngFor="let erro of getErrorMessage('searchTitulo')"
+        class="text-danger"
+      >
+        <span>{{ erro }}</span>
+      </div>
+    </div>
+    <div class="">
+      <input
+        class="input-form form-control"
+        formControlName="searchAutor"
+        placeholder="Autor"
+        type="text"
+      />
+      <div
+        *ngFor="let erro of getErrorMessage('searchAutor')"
+        class="text-danger"
+      >
+        <span>{{ erro }}</span>
+      </div>
+    </div>
+    <div>
+      <input
+        class="input-form form-control"
+        formControlName="searchAno"
+        placeholder="Ano"
+        type="text"
+      />
+      <div
+        *ngFor="let erro of getErrorMessage('searchAno')"
+        class="text-danger"
+      >
+        <span>{{ erro }}</span>
+      </div>
+    </div>
+  </form>
+  <button class="btn btn-primary" (click)="aplicarFiltro()">Filtrar</button>
+</div>
+
+<app-list [livros]="livros" [isLoading]="isLoading"></app-list>

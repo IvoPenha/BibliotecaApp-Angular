@@ -1,0 +1,88 @@
+<div *ngIf="livro.disponibilidade === true">
+  <div class="modal-header">
+    <h4 class="modal-title">Emprestimo de Livro</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="activeModal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="formulario">
+      <label for="usuario" class="form-label"> Usuario* </label>
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        aria-placeholder="Selecione um usuario"
+        formControlName="usuario"
+      >
+        <option [value]="usuario.id" *ngFor="let usuario of usuarios">
+          {{ usuario.nome }}
+        </option>
+      </select>
+
+      <label for="livro" class="form-label"> Livro* </label>
+      <input
+        type="text"
+        value="{{ livro.titulo }}"
+        disabled
+        class="input-form form-control"
+      />
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="activeModal.close('Close click')"
+    >
+      Fechar
+    </button>
+    <button
+      type="submit"
+      [disabled]="!formulario.valid"
+      class="btn btn-primary"
+      (click)="onSubmit()"
+    >
+      Emprestar livro
+    </button>
+  </div>
+</div>
+<div *ngIf="livro.disponibilidade === false">
+  <div class="modal-header">
+    <h4 class="modal-title">Devolução de Livro</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="activeModal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <label for="livro" class="form-label"> Livro* </label>
+    <input
+      type="text"
+      value="{{ livro.titulo }}"
+      disabled
+      class="input-form form-control"
+    />
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="activeModal.close('Close click')"
+    >
+      Fechar
+    </button>
+    <button
+      type="submit"
+      [disabled]=""
+      class="btn btn-primary"
+      (click)="onSubmit()"
+    >
+      Devolver livro
+    </button>
+  </div>
+</div>

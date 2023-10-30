@@ -1,0 +1,34 @@
+<div
+  class="box shadow-sm rounded w-full overflow-x-scroll"
+  style="margin-top: 20px; margin-bottom: 20px"
+>
+  <h4 class="title">Tabela de usuarios</h4>
+  <div
+    class="d-flex justify-content-center align-items-center"
+    *ngIf="isLoading"
+  >
+    <div class="spinner-border text-primary" role="status"></div>
+  </div>
+  <table class="table table-striped" *ngIf="!isLoading">
+    <thead>
+      <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Telefone</th>
+        <!-- <th scope="col">Ações</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of data">
+        <td>{{ usuario.nome }}</td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.telefone }}</td>
+        <!-- <td>
+          <button class="btn btn-danger" (click)="delete.emit(usuario.id)">
+            <fa-icon [icon]="faTrash"></fa-icon>
+          </button>
+        </td> -->
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,9 @@
+<app-page-header
+  description="Pagina de usuarios"
+  title="Usuarios"
+  [showButton]="true"
+  textButton="Novo"
+  (buttonEvent)="openModal()"
+></app-page-header>
+
+<app-data-table [data]="usuarios" [isLoading]="isLoading"> </app-data-table>

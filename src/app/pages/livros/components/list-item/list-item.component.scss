@@ -1,0 +1,76 @@
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  height: 8rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px 4px 0 0;
+  .icon {
+    color: #fff;
+    background-color: #1b236d;
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 10px;
+  }
+  .body {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    .title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .text {
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #807e7e;
+    }
+  }
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+  }
+}
+
+.dropdown-menu {
+  top: 400 !important;
+  right: 0;
+}
+.menutoggle {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #e4dfdf;
+  padding: 1rem 4rem;
+  border-radius: 0 0 4px 4px;
+  button {
+    width: 100%;
+  }
+}
+.disponibilidade {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+.disponivel {
+  color: #215721;
+}
+
+.nao-disponivel {
+  color: #a62f2f;
+}

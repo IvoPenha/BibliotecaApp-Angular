@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="wrapper"></div>
+  <div class="icon">
+    <fa-icon [icon]="faBook"></fa-icon>
+  </div>
+  <div class="body">
+    <span class="title">{{ livro.titulo }}</span>
+    <p class="text">{{ livro.autor }}</p>
+  </div>
+
+  <div class="footer">
+    <p class="data">
+      <fa-icon [icon]="faCalendar"></fa-icon> {{ livro.ano }} d.C.
+    </p>
+    <p
+      class="disponibilidade"
+      [ngClass]="
+        livro.disponibilidade == true ? 'disponivel' : 'nao-disponivel'
+      "
+    >
+      {{ livro.disponibilidade == true ? "Disponível" : "Não Disponível" }}
+    </p>
+  </div>
+</div>
+<div class="actions">
+  <button
+    class="btn btn-primary"
+    (click)="onClick.emit()"
+    *ngIf="livro.disponibilidade"
+  >
+    <fa-icon [icon]="faHandPaper"></fa-icon> Emprestar
+  </button>
+  <button
+    class="btn btn-warning"
+    (click)="onClick.emit()"
+    *ngIf="!livro.disponibilidade"
+  >
+    <fa-icon [icon]="faHandPaper"></fa-icon> Devolver
+  </button>
+</div>

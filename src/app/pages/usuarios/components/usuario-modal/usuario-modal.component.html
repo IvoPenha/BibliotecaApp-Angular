@@ -1,0 +1,66 @@
+<div class="modal-header">
+  <h4 class="modal-title">Cadastro de Usuário</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="formulario">
+    <div class="mb-3 input-group">
+      <label for="nome" class="form-label">Nome*</label>
+      <input
+        type="text"
+        class="input-form form-control"
+        id="nome"
+        formControlName="nome"
+      />
+      <div *ngFor="let erro of getErrorMessage('nome')" class="text-danger">
+        <span>{{ erro }}</span>
+      </div>
+    </div>
+    <div class="mb-3 input-group">
+      <label for="email" class="form-label">Email*</label>
+      <input
+        type="email"
+        class="input-form form-control"
+        id="email"
+        formControlName="email"
+      />
+      <div *ngFor="let erro of getErrorMessage('email')" class="text-danger">
+        <span>{{ erro }}</span>
+      </div>
+    </div>
+    <div class="mb-3 input-group">
+      <label for="telefone" class="form-label">Telefone*</label>
+      <input
+        type="tel"
+        class="input-form form-control"
+        id="telefone"
+        formControlName="telefone"
+      />
+      <div *ngFor="let erro of getErrorMessage('telefone')" class="text-danger">
+        <span>{{ erro }}</span>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="activeModal.close('Close click')"
+  >
+    Fechar
+  </button>
+  <button
+    type="submit"
+    [disabled]="!formulario.valid"
+    class="btn btn-primary"
+    (click)="onSubmit()"
+  >
+    Cadastrar
+  </button>
+</div>

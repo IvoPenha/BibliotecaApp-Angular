@@ -1,0 +1,67 @@
+<div class="modal-header">
+  <h4 class="modal-title">Cadastro de Livro</h4>
+  <button
+    type="button"
+    class="btn-close"
+    aria-label="Close"
+    (click)="activeModal.dismiss('Cross click')"
+  ></button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="formulario">
+    <div class="mb-3">
+      <label for="titulo" class="form-label">Titulo*</label>
+      <input
+        type="text"
+        class="input-form form-control"
+        id="titulo"
+        formControlName="titulo"
+      />
+      <div *ngFor="let erro of getErrorMessage('titulo')" class="text-danger">
+        <span>{{ erro }}</span>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="autor" class="form-label">Autor*</label>
+      <input
+        type="text"
+        class="input-form form-control"
+        id="autor"
+        formControlName="autor"
+      />
+      <div *ngFor="let erro of getErrorMessage('autor')" class="text-danger">
+        <span>{{ erro }}</span>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="ano" class="form-label">ano*</label>
+      <input
+        type="number"
+        class="input-form form-control"
+        id="ano"
+        formControlName="ano"
+        step="2"
+      />
+      <div *ngFor="let erro of getErrorMessage('ano')" class="text-danger">
+        <span>{{ erro }}</span>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button
+    type="submit"
+    [disabled]="!formulario.valid"
+    class="btn btn-primary"
+    (click)="onSubmit()"
+  >
+    Cadastrar
+  </button>
+  <button
+    type="button"
+    class="btn btn-outline-dark"
+    (click)="activeModal.close('Close click')"
+  >
+    Fechar
+  </button>
+</div>

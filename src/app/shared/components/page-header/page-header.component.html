@@ -1,0 +1,23 @@
+<div class="row p-0 m-0 pt-2 d-flex align-items-center">
+  <div class="col-md-auto px-0 icon-div" *ngIf="iconClass">
+    <fa-icon [icon]="iconClass"></fa-icon>
+  </div>
+  <div class="col line">
+    <h3 class="mb-0">{{ title }}</h3>
+    <h4 class="mt-2" *ngIf="description">{{ description }}</h4>
+  </div>
+  <div class="col-md-auto py-2 line px-0 button-div" *ngIf="showButton">
+    <button
+      type="button"
+      class="btn btn-primary btn-novo"
+      (click)="onClickButton()"
+    >
+      <i
+        class="bi pe-2"
+        [ngClass]="iconClassButton"
+        *ngIf="iconClassButton"
+      ></i>
+      {{ textButton }}
+    </button>
+  </div>
+</div>
