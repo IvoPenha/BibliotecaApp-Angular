@@ -1,27 +1,26 @@
-# BibliotecaApp
+# Sistema de Gerenciamento de Biblioteca 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.6.
+## Descrição
 
-## Development server
+O Sistema de Gerenciamento de Biblioteca é uma aplicação web desenvolvida em Angular que permite aos usuários emprestar e devolver livros em uma biblioteca. O sistema gerencia três entidades principais: Usuário, Livro e Empréstimo.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Funcionalidades
 
-## Code scaffolding
+### Cadastro de Usuário
+Podem ser Cadastrados novos usuarios fornecendo seu nome, e-mail e número de telefone.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Cadastro de Livros
+Pode-se adicionar novos livros, incluindo título, autor e ano de publicação.
 
-## Build
+### Empréstimo de Livros
+Usuários podem solicitar o empréstimo de livros disponíveis. O sistema registra a data de empréstimo e define uma data de devolução automática (por exemplo, 15 dias após o empréstimo).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Devolução de Livros
+Usuários podem devolver os livros antes ou na data de devolução. Quando um livro é devolvido, a disponibilidade é atualizada para 1 (disponível).
 
-## Running unit tests
+### Consulta de Livros
+Usuários podem pesquisar livros por título, autor ou ano de publicação. Eles podem verificar se um livro está disponível ou emprestado.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**Nota:** Este projeto foi desenvolvido como parte de um desafio técnico e apresenta funcionalidades básicas para o gerenciamento de uma biblioteca.
